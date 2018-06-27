@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MNIST_GAN" />
     <orderEntry type="module" module-name="Plotting" />
+    <orderEntry type="module" module-name="Chapter09" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />
