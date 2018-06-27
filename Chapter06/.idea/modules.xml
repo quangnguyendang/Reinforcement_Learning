@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Chapter06.iml" filepath="$PROJECT_DIR$/.idea/Chapter06.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../DEEP_LEARNING/GAN/MNIST_GAN/.idea/MNIST_GAN.iml" filepath="$PROJECT_DIR$/../../../../DEEP_LEARNING/GAN/MNIST_GAN/.idea/MNIST_GAN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Python_Projects/Plotting/.idea/Plotting.iml" filepath="$PROJECT_DIR$/../../../../Python_Projects/Plotting/.idea/Plotting.iml" />
     </modules>
   </component>
 </project>
