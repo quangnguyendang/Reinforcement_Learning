@@ -220,18 +220,18 @@ def SARSA_Walking(Q, alpha=0.1, gamma=0.99, epsilon=0.05, max_episode=500, displ
 
 # -----------------MAIN PROGRAM---------------------
 Q_Sarsa = np.zeros((len(state_space), len(action_space)))
-return_data_2 = SARSA_Walking(Q_Sarsa, alpha=0.1, gamma=0.99, epsilon=0.2, max_episode=5000, display=False)
+return_data_2 = SARSA_Walking(Q_Sarsa, alpha=0.1, gamma=0.99, epsilon=0.001, max_episode=5000, display=False)
 print_policy(Q_Sarsa)
 print_Q(Q_Sarsa)
 
 Q_Q = np.zeros((len(state_space), len(action_space)))
-return_data_1 = Q_Learning_Walking(Q_Q, alpha=0.1, gamma=0.99, epsilon=0.2, max_episode=5000, display=False)
+return_data_1 = Q_Learning_Walking(Q_Q, alpha=0.1, gamma=0.99, epsilon=0.001, max_episode=5000, display=False)
 print_policy(Q_Q)
 print_Q(Q_Q)
 
 Q1 = np.zeros((len(state_space), len(action_space)))
 Q2 = np.zeros((len(state_space), len(action_space)))
-return_data_3 = Double_Q_Learning_Walking(Q1, Q2, alpha=0.1, gamma=0.99, epsilon=0.2, max_episode=5000, display=False)
+return_data_3 = Double_Q_Learning_Walking(Q1, Q2, alpha=0.1, gamma=0.99, epsilon=0.001, max_episode=5000, display=False)
 print_policy((Q1+Q2)/2)
 print_Q((Q1+Q2)/2)
 
@@ -263,3 +263,4 @@ def plot_return(label1=None, label2=None, label3=None, data1=None, data2=None, d
 
 
 plot_return(label1='Q Learning', label2='SARSA Learning', label3='Double Q Learning', data1=return_data_1, data2=return_data_2, data3=return_data_3)
+# plot_return(label1='Q Learning', label2='SARSA Learning', data1=return_data_1, data2=return_data_2)
