@@ -14,11 +14,8 @@
       <file leaf-file-name="Gradient_with_Linear_Methods.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gradient_with_Linear_Methods.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
-              <folding>
-                <element signature="e#209#227#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -109,7 +106,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21155347" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -138,9 +134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3075">
           <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
-          <folding>
-            <element signature="e#209#227#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -148,9 +141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2565">
           <caret line="171" column="27" lean-forward="true" selection-start-line="171" selection-start-column="27" selection-end-line="171" selection-end-column="27" />
-          <folding>
-            <element signature="e#209#227#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -158,9 +148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2400">
           <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
-          <folding>
-            <element signature="e#209#227#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -180,11 +167,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gradient_with_Linear_Methods.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
-          <folding>
-            <element signature="e#209#227#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
