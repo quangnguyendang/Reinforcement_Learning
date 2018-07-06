@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/.idea/Chap02_Multi_Armed_Bandit.iml" filepath="$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/.idea/Chap02_Multi_Armed_Bandit.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Chapter07_N-Step_TD_Prediction.iml" filepath="$PROJECT_DIR$/.idea/Chapter07_N-Step_TD_Prediction.iml" />
     </modules>
   </component>
