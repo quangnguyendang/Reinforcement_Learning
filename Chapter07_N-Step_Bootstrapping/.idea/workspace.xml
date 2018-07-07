@@ -11,35 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="N_Step_TD_Prediction.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
+      <file leaf-file-name="N_Step_Tree_Backup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/N_Step_Tree_Backup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Multi_armed_bandit.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="192">
+              <caret line="144" column="49" lean-forward="true" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#521#539#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="n_bandit_env.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/gym_n_bandit/envs/n_bandit_env.py">
+      <file leaf-file-name="Off_Policy_N_Step_SARSA.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="147" column="27" lean-forward="true" selection-end-line="179" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -65,6 +53,7 @@
         <option value="$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py" />
         <option value="$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/gym_n_bandit/envs/n_bandit_env.py" />
         <option value="$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py" />
+        <option value="$PROJECT_DIR$/N_Step_Tree_Backup.py" />
       </list>
     </option>
   </component>
@@ -79,33 +68,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Chapter07_N-Step_TD_Prediction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chapter07_N-Step_TD_Prediction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Chapter07_N-Step_TD_Prediction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chap02_Multi_Armed_Bandit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Chapter07_N-Step_TD_Prediction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chap02_Multi_Armed_Bandit" type="462c0819:PsiDirectoryNode" />
-              <item name="gym_n_bandit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Chapter07_N-Step_TD_Prediction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chap02_Multi_Armed_Bandit" type="462c0819:PsiDirectoryNode" />
-              <item name="gym_n_bandit" type="462c0819:PsiDirectoryNode" />
-              <item name="envs" type="462c0819:PsiDirectoryNode" />
+              <item name="Chapter07_N-Step_Bootstrapping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chapter07_N-Step_Bootstrapping" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -120,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Multi_armed_bandit">
+  <component name="RunManager" selected="Python.N_Step_Tree_Backup">
     <configuration name="Multi_armed_bandit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chap02_Multi_Armed_Bandit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,6 +131,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="N_Step_Tree_Backup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter07_N-Step_Bootstrapping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/N_Step_Tree_Backup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Off_Policy_N_Step_SARSA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chapter07_N-Step_TD_Prediction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,9 +171,11 @@
       <item itemvalue="Python.N_Step_TD_Prediction" />
       <item itemvalue="Python.Off_Policy_N_Step_SARSA" />
       <item itemvalue="Python.Multi_armed_bandit" />
+      <item itemvalue="Python.N_Step_Tree_Backup" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.N_Step_Tree_Backup" />
         <item itemvalue="Python.Multi_armed_bandit" />
         <item itemvalue="Python.Off_Policy_N_Step_SARSA" />
         <item itemvalue="Python.N_Step_TD_Prediction" />
@@ -203,17 +197,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23028883" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33505154" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42439863" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -227,6 +222,51 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="e#208#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/gym_n_bandit/envs/n_bandit_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/gym_n_bandit/envs/n_bandit_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -248,17 +288,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
+    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="138" column="31" lean-forward="true" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="105">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -266,18 +299,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/N_Step_TD_Prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-end-line="136" selection-end-column="10" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#208#226#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py">
+    <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="150">
+          <caret line="147" column="27" lean-forward="true" selection-end-line="179" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/N_Step_Tree_Backup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="144" column="49" lean-forward="true" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#521#539#0" expanded="true" />
           </folding>
         </state>
       </provider>
