@@ -158,7 +158,7 @@ class NStepSARSAAgent:
 
 env = RandomWalkEnv(20, 2)
 agent1 = NStepSARSAAgent(20, 2, env)
-agent1.random_walk(n_episode=1000000, learning_rate=0.001, gamma=0.99, epsilon=1, n=3)
+agent1.random_walk(n_episode=1000, learning_rate=0.01, gamma=0.99, epsilon=1, n=3)
 
 print(agent1.get_Q())
 print(agent1.get_target_policy())

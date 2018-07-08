@@ -10,29 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="N_Step_Tree_Backup.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/N_Step_Tree_Backup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="144" column="49" lean-forward="true" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
-              <folding>
-                <element signature="e#521#539#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Off_Policy_N_Step_SARSA.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="147" column="27" lean-forward="true" selection-end-line="179" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,10 +28,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/N_Step_TD_Prediction.py" />
-        <option value="$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py" />
         <option value="$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/gym_n_bandit/envs/n_bandit_env.py" />
         <option value="$PROJECT_DIR$/../Chap02_Multi_Armed_Bandit/Multi_armed_bandit.py" />
         <option value="$PROJECT_DIR$/N_Step_Tree_Backup.py" />
+        <option value="$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py" />
       </list>
     </option>
   </component>
@@ -94,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.N_Step_Tree_Backup">
+  <component name="RunManager" selected="Python.Off_Policy_N_Step_SARSA">
     <configuration name="Multi_armed_bandit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chap02_Multi_Armed_Bandit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,15 +128,15 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="Off_Policy_N_Step_SARSA" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Chapter07_N-Step_TD_Prediction" />
+      <module name="Chapter07_N-Step_Bootstrapping" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\HP\Anaconda3\envs\rlenv\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py" />
@@ -175,9 +153,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Off_Policy_N_Step_SARSA" />
         <item itemvalue="Python.N_Step_Tree_Backup" />
         <item itemvalue="Python.Multi_armed_bandit" />
-        <item itemvalue="Python.Off_Policy_N_Step_SARSA" />
         <item itemvalue="Python.N_Step_TD_Prediction" />
       </list>
     </recent_temporary>
@@ -197,12 +175,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23028883" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23028883" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33505154" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19587629" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -312,20 +289,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="147" column="27" lean-forward="true" selection-end-line="179" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/N_Step_Tree_Backup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="144" column="49" lean-forward="true" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
+          <caret line="144" column="84" lean-forward="true" selection-start-line="144" selection-start-column="84" selection-end-line="144" selection-end-column="84" />
           <folding>
             <element signature="e#521#539#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Off_Policy_N_Step_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="124" column="21" lean-forward="true" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
         </state>
       </provider>
     </entry>
