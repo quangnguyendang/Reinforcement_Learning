@@ -6,6 +6,7 @@ import gym
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class SarsaAgent:
     def __init__(self, environment=gym.make('MountainCar-v0')):
         self.env = environment
@@ -104,3 +105,17 @@ plt.legend(loc='best')
 plt.show()
 
 print(agent1.get_w())
+
+# env = gym.make('MountainCar-v0')
+# env = gym.wrappers.Monitor(env, "/tmp_videos/", video_callable=lambda episode_id: episode_id % 10000 == 0, force=True)
+# agent1 = SarsaAgent(env)
+# steps_of_episode = agent1.train(n_episode=1000000, learning_rate=0.00001, gamma=0.99, epsilon=0.01)
+# env.close()
+#
+# plt.plot(steps_of_episode, label="Linear Approximation")
+# plt.xlabel('episode')
+# plt.ylabel('number of needed steps')
+# plt.legend(loc='best')
+# plt.show()
+#
+# print(agent1.get_w())
