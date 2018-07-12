@@ -11,13 +11,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mountain_Car_1_Step_Semi_Gradient_SARSA.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py">
+      <file leaf-file-name="Sarsa_extra.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="300">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding>
-                <element signature="e#239#249#0" expanded="true" />
+                <element signature="e#247#265#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -32,12 +41,20 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace>s[0]</replace>
+      <replace>s[1]</replace>
+    </replaceStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Mountain_Car_Random_Action.py" />
         <option value="$PROJECT_DIR$/Mountain_Car_N_Step_Semi_Gradient_SARSA.py" />
         <option value="$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py" />
+        <option value="$PROJECT_DIR$/Sarsa_extra.py" />
+        <option value="$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" />
       </list>
     </option>
   </component>
@@ -78,7 +95,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Mountain_Car_Random_Action">
+  <component name="RunManager" selected="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA">
+    <configuration name="Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Mountain_Car_N_Step_Semi_Gradient_SARSA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chapter10_On_Policy_Control_with_Approximation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,9 +153,11 @@
     <list>
       <item itemvalue="Python.Mountain_Car_N_Step_Semi_Gradient_SARSA" />
       <item itemvalue="Python.Mountain_Car_Random_Action" />
+      <item itemvalue="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" />
         <item itemvalue="Python.Mountain_Car_Random_Action" />
         <item itemvalue="Python.Mountain_Car_N_Step_Semi_Gradient_SARSA" />
       </list>
@@ -143,16 +180,16 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30927834" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41752577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39862543" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -166,13 +203,51 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding>
+            <element signature="e#247#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding>
+            <element signature="e#247#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="116" column="12" lean-forward="true" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="e#239#249#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -187,9 +262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#239#249#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -235,12 +307,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tiles3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mountain_Car_1_Step_Semi_Gradient_SARSA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="-375">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="e#239#249#0" expanded="true" />
+            <element signature="e#247#265#0" expanded="true" />
           </folding>
         </state>
       </provider>

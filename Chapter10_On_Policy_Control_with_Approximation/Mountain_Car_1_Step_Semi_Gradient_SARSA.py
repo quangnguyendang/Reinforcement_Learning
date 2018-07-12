@@ -67,8 +67,6 @@ class SarsaAgent:
     def train(self, n_episode=5000, learning_rate=0.01, gamma=0.99, epsilon=0.01):
         num_steps_of_episode = []
         for i_episode in range(n_episode):
-            # if i_episode % 1 == 0:
-            #     print("Linear Approximation - Episode #{} is run.".format(i_episode))
             self.reset()
             n_trajectory = 0
             while True:
