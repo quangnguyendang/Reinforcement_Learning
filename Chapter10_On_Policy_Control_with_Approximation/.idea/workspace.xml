@@ -11,30 +11,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Sarsa_extra.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
+      <file leaf-file-name="Simple_Recommender.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
+            <state relative-caret-position="90">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
+      <file leaf-file-name="Content_Recommender.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Recommender.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="48">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <element signature="e#247#265#0" expanded="true" />
+                <element signature="e#255#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Simple_Recommender.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -61,6 +56,8 @@
         <option value="$PROJECT_DIR$/Sarsa_extra.py" />
         <option value="$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" />
         <option value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py" />
+        <option value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Based_Recommender.py" />
+        <option value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Recommender.py" />
       </list>
     </option>
   </component>
@@ -75,6 +72,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -82,12 +80,18 @@
               <item name="Chapter10_On_Policy_Control_with_Approximation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Chapter10_On_Policy_Control_with_Approximation" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Chapter10_On_Policy_Control_with_Approximation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMDB_Top_250_Recommender" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -101,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA">
+  <component name="RunManager" selected="Python.Content_Recommender">
     <configuration name="Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chapter10_On_Policy_Control_with_Approximation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,6 +119,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Content_Recommender" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IMDB_Top_250_Recommender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Recommender.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,13 +178,35 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Simple_Recommender" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IMDB_Top_250_Recommender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.Mountain_Car_N_Step_Semi_Gradient_SARSA" />
       <item itemvalue="Python.Mountain_Car_Random_Action" />
       <item itemvalue="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" />
+      <item itemvalue="Python.Simple_Recommender" />
+      <item itemvalue="Python.Content_Recommender" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Content_Recommender" />
+        <item itemvalue="Python.Simple_Recommender" />
         <item itemvalue="Python.Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA" />
         <item itemvalue="Python.Mountain_Car_Random_Action" />
         <item itemvalue="Python.Mountain_Car_N_Step_Semi_Gradient_SARSA" />
@@ -186,12 +230,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28522336" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.58419245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -209,6 +253,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Based_Recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -220,9 +278,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding>
-            <element signature="e#247#265#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -237,9 +292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2190">
           <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
-          <folding>
-            <element signature="e#247#265#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -306,13 +358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mountain_Car_Random_Action.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tiles3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -329,23 +374,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sarsa_extra.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="69" />
+        <state relative-caret-position="210">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/rlenv/Lib/site-packages/pandas/core/apply.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="276" selection-start-line="276" selection-end-line="276" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="e#247#265#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="90" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py">
+    <entry file="file://$PROJECT_DIR$/Mountain_Car_Random_Action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Based_Recommender.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Simple_Recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/Content_Recommender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#255#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
