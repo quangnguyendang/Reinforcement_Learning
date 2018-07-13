@@ -2,8 +2,6 @@
 # PhD Student: Nguyen Dang Quang, Computer Science Department, KyungHee University, Korea.
 # An Access-Control Queuing Task Implemented with Differential Semi-Gradient SARSA
 
-# Tiling Approximation is program using Tile Coding Software from http://incompleteideas.net/tiles/tiles3.html
-
 import numpy as np
 import gym
 from tiles3 import tiles, IHT
@@ -93,9 +91,6 @@ class ApproximationSarsaAgent:
         return np.array(tiling_vector)
 
     def feature_x(self, s0, s1, a):
-        # return np.array([1, s0, s1, a, s0 * s1, s0 * a, s1 * a, s0 ** 2, s1 ** 2, a ** 2, s0 ** 2 * s1 ** 2 * a ** 2,
-        #                  s0 ** 2 * s1 * a, s0 ** 2 * s1, s0 ** 2 * a, s0 * s1 ** 2 * a, s0 * s1 ** 2, s1 ** 2 * a,
-        #                  s0 * s1 * a ** 2, s0 * s1 * a ** 2, s0 * a ** 2, s1 * a ** 2]) * 0.001
         return self.convert_tiling_vector(
             tiles(self.hash_table, self.num_of_tiles, [s0 * self.s0_scale, s1 * self.s1_scale], [a]))
 
@@ -128,8 +123,8 @@ class ApproximationSarsaAgent:
 
     def train(self, n_episode=5000, learning_rate=0.001, beta=0.01, gamma=0.99, epsilon=0.01):
         for i_episode in range(n_episode):
-            if i_episode % 1 == 0:
-                print("Episode {} is running.".format(i_episode))
+            if i_episode % 100000 == 0:
+                print("Approximation Sarsa - Episode {} is running.".format(i_episode))
             self.reset()
             r_avg = 0
             a = self.A_max(state=self.state, epsilon=epsilon)
@@ -152,6 +147,7 @@ class ApproximationSarsaAgent:
                 a = a_
 
     def print_policy(self):
+        print(" Tiling Approximation -  SARSA Policy")
         print("Number of free server 0 1 2 3 4 5 6 7 8 9 10")
         for s_1 in self.env.priority:
             row = "           Priority " + str(s_1) + " "
@@ -219,8 +215,8 @@ class TBSarsaAgent:
 
     def train(self, n_episode=5000, learning_rate=0.001, beta=0.01, gamma=0.99, epsilon=0.01):
         for i_episode in range(n_episode):
-            if i_episode % 1 == 0:
-                print("Episode {} is running.".format(i_episode))
+            if i_episode % 100000 == 0:
+                print("TB Sarsa - Episode {} is running.".format(i_episode))
             self.reset()
             r_avg = 0
             a = self.A_max(state=self.state, epsilon=epsilon)
@@ -245,6 +241,7 @@ class TBSarsaAgent:
         return self.Q
 
     def print_policy(self):
+        print(" Tabular SARSA Policy")
         print("Number of free server 0 1 2 3 4 5 6 7 8 9 10")
         for s_1 in self.env.priority:
             row = "           Priority " + str(s_1) + " "
@@ -269,11 +266,11 @@ class TBSarsaAgent:
 env = ServerEnv(n=10, priority=[1, 2, 4, 8], p=0.06)
 
 agent1 = ApproximationSarsaAgent(environment=env, num_of_tiles=8)
-agent1.train(n_episode=1000, learning_rate=0.01, beta=0.01, gamma=1, epsilon=0.1)
+agent1.train(n_episode=1000000, learning_rate=0.01, beta=0.01, gamma=1, epsilon=0.1)
 agent1.print_policy()
 agent1.print_Q()
 
-# agent2 = TBSarsaAgent(environment=env)
-# agent2.train(n_episode=501, learning_rate=0.01, beta=0.01, gamma=1, epsilon=0.1)
-# agent2.print_policy()
-# agent2.print_Q()
+agent2 = TBSarsaAgent(environment=env)
+agent2.train(n_episode=1000000, learning_rate=0.01, beta=0.01, gamma=1, epsilon=0.1)
+agent2.print_policy()
+agent2.print_Q()

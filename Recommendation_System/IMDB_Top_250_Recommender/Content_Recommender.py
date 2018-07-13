@@ -136,9 +136,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 count = CountVectorizer(stop_words='english')
 count_matrix = count.fit_transform(metadata['soup'])
 
-count = CountVectorizer(stop_words='english')
-count_matrix = count.fit_transform(metadata['soup'])
-
 # Compute the Cosine Similarity matrix based on the count_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 

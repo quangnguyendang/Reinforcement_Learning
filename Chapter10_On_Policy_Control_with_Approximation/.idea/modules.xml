@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Chapter10_On_Policy_Control_with_Approximation.iml" filepath="$PROJECT_DIR$/.idea/Chapter10_On_Policy_Control_with_Approximation.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/.idea/IMDB_Top_250_Recommender.iml" filepath="$PROJECT_DIR$/../Recommendation_System/IMDB_Top_250_Recommender/.idea/IMDB_Top_250_Recommender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Recommendation_System/Research_Recommender/.idea/Research_Recommender.iml" filepath="$PROJECT_DIR$/../Recommendation_System/Research_Recommender/.idea/Research_Recommender.iml" />
     </modules>
   </component>
 </project>
