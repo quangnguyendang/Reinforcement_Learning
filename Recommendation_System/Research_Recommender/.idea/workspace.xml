@@ -14,8 +14,8 @@
       <file leaf-file-name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+            <state relative-caret-position="145">
+              <caret line="143" column="51" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
               <folding>
                 <element signature="e#395#405#0" expanded="true" />
               </folding>
@@ -261,8 +261,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+        <state relative-caret-position="145">
+          <caret line="143" column="51" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
           <folding>
             <element signature="e#395#405#0" expanded="true" />
           </folding>

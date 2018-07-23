@@ -55,8 +55,6 @@ class QLearningAgent:
         if np.random.rand() < epsilon:
             # Exploration
             return np.random.randint(self.n_action)
-            # Note that now, we cannot know the feature of the action, therefore, may need to
-            # catch exception and try another action
         else:
             # Exploitation
             max_a = []
@@ -144,8 +142,6 @@ class SarsaAgent:
         if np.random.rand() < epsilon:
             # Exploration
             return np.random.randint(self.n_action)
-            # Note that now, we cannot know the feature of the action, therefore, may need to
-            # catch exception and try another action
         else:
             # Exploitation
             max_a = []
