@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py">
+      <file leaf-file-name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+            <state relative-caret-position="61">
+              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
               <folding>
                 <element signature="e#395#405#0" expanded="true" />
               </folding>
@@ -30,6 +30,8 @@
       <list>
         <option value="$PROJECT_DIR$/Research_Recommender_Clustering.py" />
         <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py" />
+        <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr.py" />
+        <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" />
       </list>
     </option>
   </component>
@@ -78,7 +80,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr">
+  <component name="RunManager" selected="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr">
+    <configuration name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chapter10_On_Policy_Control_with_Approximation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,6 +112,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,9 +156,13 @@
     <list>
       <item itemvalue="Python.Research_Recommender_Clustering" />
       <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
+      <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
+      <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
+        <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
         <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
         <item itemvalue="Python.Research_Recommender_Clustering" />
       </list>
@@ -141,13 +183,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22638564" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5635739" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3556701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -186,20 +229,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+          <folding>
+            <element signature="e#395#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Access_Control_Queuing_Task_Differential_Semi_Gradient_SARSA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="63" column="62" lean-forward="true" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="e#247#265#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py">
+    <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+        <state relative-caret-position="709">
+          <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+          <folding>
+            <element signature="e#395#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
           <folding>
             <element signature="e#395#405#0" expanded="true" />
           </folding>
