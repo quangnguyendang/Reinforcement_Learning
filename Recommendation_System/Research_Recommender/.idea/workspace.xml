@@ -11,19 +11,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
+      <file leaf-file-name="True_Online_SARSA_lambda_with_linear_function_Approximation.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="143" column="51" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+            <state relative-caret-position="744">
+              <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
               <folding>
-                <element signature="e#395#405#0" expanded="true" />
+                <element signature="e#400#410#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,6 +39,8 @@
         <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py" />
         <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr.py" />
         <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" />
+        <option value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/SARSA_lambda_with_binary_features_and_linear_function_Approximation.py" />
+        <option value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py" />
       </list>
     </option>
   </component>
@@ -52,6 +61,10 @@
             <path>
               <item name="Research_Recommender" type="b2602c69:ProjectViewProjectNode" />
               <item name="Chapter10_On_Policy_Control_with_Approximation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Research_Recommender" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Chapter12_Eligibility_Traces" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -80,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr">
+  <component name="RunManager" selected="Python.True_Online_SARSA_lambda_with_linear_function_Approximation">
     <configuration name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Chapter10_On_Policy_Control_with_Approximation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,36 +148,56 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Research_Recommender_Clustering" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Research_Recommender" />
+    <configuration name="SARSA_lambda_with_binary_features_and_linear_function_Approximation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter12_Eligibility_Traces" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Research_Recommender_Clustering.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\HP\Desktop\Reinforcement_Learning\Introduction_Course\RL_Code\Chapter12_Eligibility_Traces\True_Online_SARSA_lambda_with_linear_function_Approximation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="True_Online_SARSA_lambda_with_linear_function_Approximation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Chapter12_Eligibility_Traces" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.Research_Recommender_Clustering" />
       <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
       <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
       <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
+      <item itemvalue="Python.SARSA_lambda_with_binary_features_and_linear_function_Approximation" />
+      <item itemvalue="Python.True_Online_SARSA_lambda_with_linear_function_Approximation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.True_Online_SARSA_lambda_with_linear_function_Approximation" />
+        <item itemvalue="Python.SARSA_lambda_with_binary_features_and_linear_function_Approximation" />
         <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
         <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
         <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
-        <item itemvalue="Python.Research_Recommender_Clustering" />
       </list>
     </recent_temporary>
   </component>
@@ -183,14 +216,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22638564" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3556701" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49656358" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -208,6 +240,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="200" column="21" lean-forward="true" selection-start-line="200" selection-start-column="21" selection-end-line="200" selection-end-column="21" />
+          <folding>
+            <element signature="e#400#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Research_Recommender_Clustering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2256">
@@ -233,9 +275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-          <folding>
-            <element signature="e#395#405#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -243,9 +282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#247#265#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -253,18 +289,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="709">
           <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
-          <folding>
-            <element signature="e#395#405#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="143" column="51" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+        <state relative-caret-position="174">
+          <caret line="180" column="46" selection-end-line="204" />
           <folding>
-            <element signature="e#395#405#0" expanded="true" />
+            <element signature="e#400#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+          <folding>
+            <element signature="e#400#410#0" expanded="true" />
           </folding>
         </state>
       </provider>
