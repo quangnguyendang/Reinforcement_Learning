@@ -11,13 +11,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="True_Online_SARSA_lambda_with_linear_function_Approximation.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py">
+      <file leaf-file-name="DQN_for_FrozenLake_Discrete_Domain.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+            <state relative-caret-position="156">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
-                <element signature="e#400#410#0" expanded="true" />
+                <element signature="e#147#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -32,6 +32,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RGB</find>
+      <find>rgb_array</find>
+      <find>16</find>
+      <find>4</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -41,13 +49,18 @@
         <option value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" />
         <option value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/SARSA_lambda_with_binary_features_and_linear_function_Approximation.py" />
         <option value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py" />
+        <option value="$PROJECT_DIR$/../../Deep_Q_Network/ATARI_Game_Demo.py" />
+        <option value="$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_BreakoutDeterministic.py" />
+        <option value="$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_Breakout.py" />
+        <option value="$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_ATARI.py" />
+        <option value="$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="948" />
     <option name="width" value="981" />
-    <option name="height" value="522" />
+    <option name="height" value="1023" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -60,11 +73,7 @@
           <expand>
             <path>
               <item name="Research_Recommender" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chapter10_On_Policy_Control_with_Approximation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Research_Recommender" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chapter12_Eligibility_Traces" type="462c0819:PsiDirectoryNode" />
+              <item name="Deep_Q_Network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -93,74 +102,74 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.True_Online_SARSA_lambda_with_linear_function_Approximation">
-    <configuration name="Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+  <component name="RunManager" selected="Python.DQN_for_FrozenLake_Discrete_Domain">
+    <configuration name="ATARI_Game_Demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Deep_Q_Network" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Deep_Q_Network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Deep_Q_Network/ATARI_Game_Demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+    <configuration name="DQN_for_ATARI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Deep_Q_Network" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Deep_Q_Network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\HP\Desktop\Reinforcement_Learning\Introduction_Course\RL_Code\Deep_Q_Network\DQN_for_FrozenLake_Discrete_Domain.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Chapter10_On_Policy_Control_with_Approximation" />
+    <configuration name="DQN_for_Breakout" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Deep_Q_Network" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Deep_Q_Network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\HP\Desktop\Reinforcement_Learning\Introduction_Course\RL_Code\Deep_Q_Network\DQN_for_FrozenLake_Discrete_Domain.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="SARSA_lambda_with_binary_features_and_linear_function_Approximation" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Chapter12_Eligibility_Traces" />
+    <configuration name="DQN_for_FrozenLake_Discrete_Domain" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Deep_Q_Network" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Deep_Q_Network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\HP\Desktop\Reinforcement_Learning\Introduction_Course\RL_Code\Chapter12_Eligibility_Traces\True_Online_SARSA_lambda_with_linear_function_Approximation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,19 +194,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
-      <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
-      <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
-      <item itemvalue="Python.SARSA_lambda_with_binary_features_and_linear_function_Approximation" />
       <item itemvalue="Python.True_Online_SARSA_lambda_with_linear_function_Approximation" />
+      <item itemvalue="Python.ATARI_Game_Demo" />
+      <item itemvalue="Python.DQN_for_Breakout" />
+      <item itemvalue="Python.DQN_for_ATARI" />
+      <item itemvalue="Python.DQN_for_FrozenLake_Discrete_Domain" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DQN_for_FrozenLake_Discrete_Domain" />
+        <item itemvalue="Python.DQN_for_ATARI" />
+        <item itemvalue="Python.DQN_for_Breakout" />
+        <item itemvalue="Python.ATARI_Game_Demo" />
         <item itemvalue="Python.True_Online_SARSA_lambda_with_linear_function_Approximation" />
-        <item itemvalue="Python.SARSA_lambda_with_binary_features_and_linear_function_Approximation" />
-        <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr" />
-        <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_Tiling_Linear_Appr" />
-        <item itemvalue="Python.Mountain_Car_1_Step_Semi_Gradient_SARSA_RBF_Linear_Appr" />
       </list>
     </recent_temporary>
   </component>
@@ -216,13 +225,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22638564" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29586262" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49656358" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48109967" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -240,13 +250,65 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/ATARI_Game_Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1537977194/numpy/core/umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51984">
+          <caret line="4332" column="4" selection-start-line="4332" selection-start-column="4" selection-end-line="4333" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="114" column="35" lean-forward="true" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
+          <folding>
+            <element signature="e#147#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/ATARI_Game_Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1537977194/numpy/core/umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51984">
+          <caret line="4332" column="4" selection-start-line="4332" selection-start-column="4" selection-end-line="4333" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3624">
+          <caret line="302" column="31" lean-forward="true" selection-start-line="302" selection-start-column="31" selection-end-line="302" selection-end-column="31" />
+          <folding>
+            <element signature="e#147#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/Mountain_Car_1_Step_Semi_Gradient_Q_Learning_RBF_Linear_Appr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2400">
           <caret line="200" column="21" lean-forward="true" selection-start-line="200" selection-start-column="21" selection-end-line="200" selection-end-column="21" />
-          <folding>
-            <element signature="e#400#410#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -296,18 +358,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="180" column="46" selection-end-line="204" />
-          <folding>
-            <element signature="e#400#410#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/True_Online_SARSA_lambda_with_linear_function_Approximation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+        <state relative-caret-position="330">
+          <caret line="290" selection-start-line="290" selection-end-line="290" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/rlenv/Lib/site-packages/pyglet/font/win32.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="326" column="43" selection-start-line="326" selection-start-column="43" selection-end-line="326" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/rlenv/Lib/site-packages/gym/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="283" column="28" selection-start-line="283" selection-start-column="28" selection-end-line="283" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1537977194/numpy/core/umath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="4332" column="4" selection-start-line="4332" selection-start-column="4" selection-end-line="4333" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/ATARI_Game_Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Deep_Q_Network/DQN_for_FrozenLake_Discrete_Domain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
-            <element signature="e#400#410#0" expanded="true" />
+            <element signature="e#147#157#0" expanded="true" />
           </folding>
         </state>
       </provider>

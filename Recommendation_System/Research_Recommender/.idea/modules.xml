@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/.idea/Chapter10_On_Policy_Control_with_Approximation.iml" filepath="$PROJECT_DIR$/../../Chapter10_On_Policy_Control_with_Approximation/.idea/Chapter10_On_Policy_Control_with_Approximation.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/.idea/Chapter12_Eligibility_Traces.iml" filepath="$PROJECT_DIR$/../../Chapter12_Eligibility_Traces/.idea/Chapter12_Eligibility_Traces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Deep_Q_Network/.idea/Deep_Q_Network.iml" filepath="$PROJECT_DIR$/../../Deep_Q_Network/.idea/Deep_Q_Network.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Research_Recommender.iml" filepath="$PROJECT_DIR$/.idea/Research_Recommender.iml" />
     </modules>
   </component>
