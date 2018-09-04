@@ -4,17 +4,16 @@ import tensorflow as tf
 import random
 from collections import namedtuple
 from matplotlib import pyplot as plt
-import plotly.plotly as py
 
 BATCH_SIZE = 32
-BATCH_ACTION = 16
-UPDATE_AFTER_NUMBER_OF_INPUT = 16000
+BATCH_ACTION = 8
+UPDATE_AFTER_NUMBER_OF_INPUT = 20000
 N_ACTION = 4
 
-N_FRAME = 1000000
+N_FRAME = 20000000
 
-REPLAY_BUFFER_SIZE = 1000000
-REPLAY_BUFFER_INIT_SIZE = 50000
+REPLAY_BUFFER_SIZE = 300001
+REPLAY_BUFFER_INIT_SIZE = 300000
 
 # --------------------DEEP Q-NETWORK----------------------
 class Q_Network:
@@ -30,26 +29,27 @@ class Q_Network:
         # Inputs are 4 image frames with shape 84x84
         self.X = tf.placeholder(shape=[None, 84, 84, 4], dtype=tf.uint8, name="X")
         self.y = tf.placeholder(shape=[None], dtype=tf.float32, name="y")
+        self.isTraining = tf.placeholder(dtype=tf.bool, name="isTraining")
         self.actions = tf.placeholder(shape=[None], dtype=tf.int32, name="actions")
         X_float = tf.to_float(self.X) / 255
 
         # CNN
         conv1 = tf.contrib.layers.conv2d(X_float, 32, 8, 4, activation_fn=None)
-        conv1_bn = tf.contrib.layers.batch_norm(conv1, center=True, scale=True, is_training=True)
+        conv1_bn = tf.contrib.layers.batch_norm(conv1, center=True, scale=True, is_training=self.isTraining)
         h1 = tf.nn.relu(conv1_bn, 'relu')
         conv2 = tf.contrib.layers.conv2d(h1, 64, 4, 2, activation_fn=None)
-        conv2_bn = tf.contrib.layers.batch_norm(conv2, center=True, scale=True, is_training=True)
+        conv2_bn = tf.contrib.layers.batch_norm(conv2, center=True, scale=True, is_training=self.isTraining)
         h2 = tf.nn.relu(conv2_bn, 'relu')
         conv3 = tf.contrib.layers.conv2d(h2, 64, 3, 1, activation_fn=None)
-        conv3_bn = tf.contrib.layers.batch_norm(conv3, center=True, scale=True, is_training=True)
+        conv3_bn = tf.contrib.layers.batch_norm(conv3, center=True, scale=True, is_training=self.isTraining)
         h3 = tf.nn.relu(conv3_bn, 'relu')
 
         # Fully Connected Layers
         flattened = tf.contrib.layers.flatten(h3)
-        fc1 = tf.contrib.layers.fully_connected(flattened, 512)
-        fc2 = tf.contrib.layers.fully_connected(fc1, 128)
-        fc3 = tf.contrib.layers.fully_connected(fc2, 64)
-        self.predictions = tf.contrib.layers.fully_connected(fc3, N_ACTION)
+        fc1 = tf.contrib.layers.fully_connected(flattened, 512, activation_fn=None)
+        fc1_bn = tf.contrib.layers.batch_norm(fc1, center=True, scale=True, is_training=self.isTraining)
+        fc_act = tf.nn.relu(fc1_bn, 'relu')
+        self.predictions = tf.contrib.layers.fully_connected(fc_act, N_ACTION)
 
         # Q value for action-state pairs
         # [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, **2**, 3]
@@ -67,7 +67,7 @@ class Q_Network:
         # Optimizer
         # self.optimizer = tf.train.RMSPropOptimizer(0.00025, 0.99, 0.0, 1e-6)
 
-        self.optimizer = tf.train.AdamOptimizer(1e-3)
+        self.optimizer = tf.train.AdamOptimizer(1e-4)
         gradients, variables = zip(*self.optimizer.compute_gradients(self.loss))
         gradients = [None if gradient is None else tf.clip_by_norm(gradient, 5.0) for gradient in gradients]
         self.train_op = self.optimizer.apply_gradients(zip(gradients, variables))
@@ -79,11 +79,11 @@ class Q_Network:
         # self.train_op = self.optimizer.minimize(self.loss, global_step=tf.train.get_global_step())
 
     def predict(self, sess, s):
-        return sess.run(self.predictions, {self.X: s})
+        return sess.run(self.predictions, {self.X: s, self.isTraining: 0})
 
     def update(self, sess, s, a, y):
         _, loss = sess.run([self.train_op, self.loss],
-                           {self.X: s, self.y: y, self.actions: a})
+                           {self.X: s, self.y: y, self.actions: a, self.isTraining: 1})
         return loss
 
 # --------------------DQN AGENT----------------------
@@ -112,18 +112,18 @@ class DQN_Agent:
         self.state = np.stack([self.state] * 4, axis=2)
 
     def update(self, s, a, r, s_, done, mode="DQN_LEARNER"):
-        print("shape of State = ", self.state.shape)
+        # print('UPDATING REPLAY BUFFER!')
         next_state = np.append(self.state[:, :, 1:], np.expand_dims(s_, 2), axis=2)
         if len(self.replay_buffer) > REPLAY_BUFFER_SIZE:
             self.replay_buffer.pop(0)
         self.replay_buffer.append(self.Transition(self.state, a, r, next_state, done))
-        # self.replay_buffer = np.append(self.replay_buffer, self.Transition(self.state, a, r, next_state, done))
         self.state = next_state
 
         loss = 0
 
         if mode == "DQN_LEARNER":
             # Update Estimator Network
+            # print('UPDATING ESTIMATOR NETWORK!')
             self.n_update = self.n_update + 1
             if self.n_update % BATCH_ACTION == 0:
                 minibatch = random.sample(self.replay_buffer, BATCH_SIZE)
@@ -152,6 +152,7 @@ class DQN_Agent:
 
     def great_update(self):
         # Update Target Network with parameters from q estimator network
+        print('UPDATING TARGET NETWORK!')
         param_est = [t for t in tf.trainable_variables() if t.name.startswith(self.q_estimator.scope)]
         param_est = sorted(param_est, key=lambda v: v.name)
         param_target = [t for t in tf.trainable_variables() if t.name.startswith(self.target_estimator.scope)]
@@ -194,8 +195,14 @@ config.gpu_options.allow_growth = True
 with tf.Session(config=config) as sess:
     process_frame = downsample_and_convertGrayscale()
 
-    agent = DQN_Agent(n_actions=env.action_space.n, sess=sess, env=env, discount_factor=0.99, epsilon_start=1,
-                      epsilon_end=0.1, epsilon_decay_steps=1000000, process_frame=process_frame)
+    agent = DQN_Agent(n_actions=env.action_space.n,
+                      sess=sess,
+                      env=env,
+                      discount_factor=0.99,
+                      epsilon_start=1,
+                      epsilon_end=0.1,
+                      epsilon_decay_steps=1000000,
+                      process_frame=process_frame)
     sess.run(tf.global_variables_initializer())
 
     # BUILD REPLAY MEMORY
@@ -212,11 +219,14 @@ with tf.Session(config=config) as sess:
         s_ = process_frame.process(sess, s_)
         agent.update(s, a, r, s_, done, mode="REPLAY_BUILDER")
         s = s_
+        if count % 10000 == 0:
+            print("- Built {}% of Replay Buffer".format(int(100.0*count/REPLAY_BUFFER_INIT_SIZE)))
     print("Finished building REPLAY BUFFER!")
 
     # LEARN WITH DQN
     s = process_frame.process(sess, env.reset())
     i = 0
+    disp = True
     while i < N_FRAME:
         agent.reset()
         done = False
@@ -232,10 +242,36 @@ with tf.Session(config=config) as sess:
             losses.append(loss)
             s = s_
             total_reward += r
+
+        # ---------- Display Intermediate Results ----------
+        if i > 1000000 and disp:
+            disp = False
+
+            window_width = 10
+            cumsum_vec = np.cumsum(np.insert(total_reward_all_eps, 0, 0))
+            ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
+
+            plt.figure()
+            plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+            plt.xlabel('Episode')
+            plt.ylabel('Moving-Average Rewards - window = 10')
+            plt.legend(loc='best')
+            plt.show()
+
+            window_width = 100
+            cumsum_vec = np.cumsum(np.insert(total_reward_all_eps, 0, 0))
+            ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
+
+            plt.figure()
+            plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+            plt.xlabel('Episode')
+            plt.ylabel('Moving-Average Rewards - window = 100')
+            plt.legend(loc='best')
+            plt.show()
+
         total_reward_all_eps.append(total_reward)
         total_steps_all_eps.append(t)
         print("Frame #{}, total_step = {}, total_reward = {}".format(i, t + 1, total_reward))
-
 
 env.close()
 
@@ -253,6 +289,17 @@ ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
 plt.figure()
 plt.plot(ma_vec, label="DQN for ATARI - Breakage")
 plt.xlabel('Episode')
-plt.ylabel('Moving-Average Rewards')
+plt.ylabel('Moving-Average Rewards - window = 10')
+plt.legend(loc='best')
+plt.show()
+
+window_width = 100
+cumsum_vec = np.cumsum(np.insert(total_reward_all_eps, 0, 0))
+ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
+
+plt.figure()
+plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+plt.xlabel('Episode')
+plt.ylabel('Moving-Average Rewards - window = 100')
 plt.legend(loc='best')
 plt.show()
