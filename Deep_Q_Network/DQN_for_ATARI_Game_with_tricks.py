@@ -5,15 +5,30 @@ import random
 from collections import namedtuple
 from matplotlib import pyplot as plt
 
+# ---------- HYPER PARAMETERS -------------
+
 BATCH_SIZE = 32
-BATCH_ACTION = 8
-UPDATE_AFTER_NUMBER_OF_INPUT = 20000
+BATCH_ACTION = 1
+UPDATE_AFTER_NUMBER_OF_INPUT = 1000
+
 N_ACTION = 4
 
-N_FRAME = 20000000
+REPEATING_FRAME = 4
+
+N_FRAME = 2000000
 
 REPLAY_BUFFER_SIZE = 300001
 REPLAY_BUFFER_INIT_SIZE = 300000
+
+DISCOUNT_FACTOR = 0.99
+EPSILON_START = 1
+EPSILON_END = 0.1
+EPSILON_DECAY_STEPS = 1000000
+
+LEARNING_RATE = 1e-4
+
+TO = 0.001
+GRADIENT_CLIPPING_NORM = 5
 
 # --------------------DEEP Q-NETWORK----------------------
 class Q_Network:
@@ -67,9 +82,9 @@ class Q_Network:
         # Optimizer
         # self.optimizer = tf.train.RMSPropOptimizer(0.00025, 0.99, 0.0, 1e-6)
 
-        self.optimizer = tf.train.AdamOptimizer(1e-4)
+        self.optimizer = tf.train.AdamOptimizer(LEARNING_RATE)
         gradients, variables = zip(*self.optimizer.compute_gradients(self.loss))
-        gradients = [None if gradient is None else tf.clip_by_norm(gradient, 5.0) for gradient in gradients]
+        gradients = [None if gradient is None else tf.clip_by_norm(gradient, GRADIENT_CLIPPING_NORM) for gradient in gradients]
         self.train_op = self.optimizer.apply_gradients(zip(gradients, variables))
 
         # gradients, variables = zip(*self.optimizer.compute_gradients(self.loss))
@@ -159,8 +174,13 @@ class DQN_Agent:
         param_target = sorted(param_target, key=lambda v: v.name)
 
         update_ops = []
+        to_coef = tf.constant(TO)
+        to_comp = tf.constant(1 - TO)
         for p1, p2 in zip(param_est, param_target):
-            op = p2.assign(p1)
+            p1_1 = tf.multiply(p1, to_coef)
+            p2_1 = tf.multiply(p2, to_comp)
+            p3 = tf.add(p1_1, p2_1)
+            op = p2.assign(p3)
             update_ops.append(op)
 
         self.sess.run(update_ops)
@@ -198,10 +218,10 @@ with tf.Session(config=config) as sess:
     agent = DQN_Agent(n_actions=env.action_space.n,
                       sess=sess,
                       env=env,
-                      discount_factor=0.99,
-                      epsilon_start=1,
-                      epsilon_end=0.1,
-                      epsilon_decay_steps=1000000,
+                      discount_factor=DISCOUNT_FACTOR,
+                      epsilon_start=EPSILON_START,
+                      epsilon_end=EPSILON_END,
+                      epsilon_decay_steps=EPSILON_DECAY_STEPS,
                       process_frame=process_frame)
     sess.run(tf.global_variables_initializer())
 
@@ -222,6 +242,7 @@ with tf.Session(config=config) as sess:
         if count % 10000 == 0:
             print("- Built {}% of Replay Buffer".format(int(100.0*count/REPLAY_BUFFER_INIT_SIZE)))
     print("Finished building REPLAY BUFFER!")
+    print("-----------------------------------")
 
     # LEARN WITH DQN
     s = process_frame.process(sess, env.reset())
@@ -236,12 +257,15 @@ with tf.Session(config=config) as sess:
             i = i + 1
             t = t + 1
             a = agent.action_selection(i)
-            s_, r, done, _ = env.step(a)
-            s_ = process_frame.process(sess, s_)
-            loss = agent.update(s, a, r, s_, done, mode="DQN_LEARNER")
-            losses.append(loss)
-            s = s_
-            total_reward += r
+            for j in range(REPEATING_FRAME):
+                s_, r, done, _ = env.step(a)
+                s_ = process_frame.process(sess, s_)
+                loss = agent.update(s, a, r, s_, done, mode="DQN_LEARNER")
+                losses.append(loss)
+                s = s_
+                total_reward += r
+                if done:
+                    break
 
         # ---------- Display Intermediate Results ----------
         if i > 1000000 and disp:
@@ -252,7 +276,7 @@ with tf.Session(config=config) as sess:
             ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
 
             plt.figure()
-            plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+            plt.plot(ma_vec, label="DQN for ATARI - Breakage - 1,000,000 frames")
             plt.xlabel('Episode')
             plt.ylabel('Moving-Average Rewards - window = 10')
             plt.legend(loc='best')
@@ -263,7 +287,7 @@ with tf.Session(config=config) as sess:
             ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
 
             plt.figure()
-            plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+            plt.plot(ma_vec, label="DQN for ATARI - Breakage - 1,000,000 frames")
             plt.xlabel('Episode')
             plt.ylabel('Moving-Average Rewards - window = 100')
             plt.legend(loc='best')
@@ -271,7 +295,7 @@ with tf.Session(config=config) as sess:
 
         total_reward_all_eps.append(total_reward)
         total_steps_all_eps.append(t)
-        print("Frame #{}, total_step = {}, total_reward = {}".format(i, t + 1, total_reward))
+        print("- Frame #{}, total_step = {}, total_reward = {}".format(i, t + 1, total_reward))
 
 env.close()
 
