@@ -1,8 +1,4 @@
-# This is the version of DQN implemented under the tutorial from https://github.com/dennybritz/reinforcement-learning/blob/master/DQN/Deep%20Q%20Learning.ipynb
-
-
 import gym
-from gym.wrappers import Monitor
 import itertools
 import numpy as np
 import os
@@ -10,14 +6,16 @@ import random
 import sys
 import tensorflow as tf
 
+if "../" not in sys.path:
+  sys.path.append("../")
+
 import plotting
 from collections import deque, namedtuple
 
-
 env = gym.envs.make("Breakout-v0")
+
 # Atari Actions: 0 (noop), 1 (fire), 2 (left) and 3 (right) are valid actions
 VALID_ACTIONS = [0, 1, 2, 3]
-
 
 class StateProcessor():
     """
@@ -27,11 +25,11 @@ class StateProcessor():
         # Build the Tensorflow graph
         with tf.variable_scope("state_processor"):
             self.input_state = tf.placeholder(shape=[210, 160, 3], dtype=tf.uint8)
-            self.output = tf.image.rgb_to_grayscale(self.input_state)
-            self.output = tf.image.crop_to_bounding_box(self.output, 34, 0, 160, 160)
-            self.output = tf.image.resize_images(
-                self.output, [84, 84], method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
-            self.output = tf.squeeze(self.output)
+            self.output_state = tf.image.rgb_to_grayscale(self.input_state)
+            self.output_state = tf.image.crop_to_bounding_box(self.output_state, 34, 0, 160, 160)
+            self.output_state = tf.image.resize_images(
+                self.output_state, [84, 84], method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
+            self.output_state = tf.squeeze(self.output_state)
 
     def process(self, sess, state):
         """
@@ -42,8 +40,7 @@ class StateProcessor():
         Returns:
             A processed [84, 84] state representing grayscale values.
         """
-        return sess.run(self.output, {self.input_state: state})
-
+        return sess.run(self.output_state, { self.input_state: state })
 
 class Estimator():
     """Q-Value Estimator neural network.
@@ -79,40 +76,15 @@ class Estimator():
 
         X = tf.to_float(self.X_pl) / 255.0
 
+        # TODO: Implement the Tensorflow graph!
         batch_size = tf.shape(self.X_pl)[0]
-
-
-        # Three convolutional layers
-        conv1 = tf.contrib.layers.conv2d(
-            X, 32, 8, 4, activation_fn=tf.nn.relu)
-        conv2 = tf.contrib.layers.conv2d(
-            conv1, 64, 4, 2, activation_fn=tf.nn.relu)
-        conv3 = tf.contrib.layers.conv2d(
-            conv2, 64, 3, 1, activation_fn=tf.nn.relu)
-
-        # Fully connected layers
-        flattened = tf.contrib.layers.flatten(conv3)
-        fc1 = tf.contrib.layers.fully_connected(flattened, 512)
-        self.predictions = tf.contrib.layers.fully_connected(fc1, len(VALID_ACTIONS))
-
-        # Get the predictions for the chosen actions only
-        gather_indices = tf.range(batch_size) * tf.shape(self.predictions)[1] + self.actions_pl
-        self.action_predictions = tf.gather(tf.reshape(self.predictions, [-1]), gather_indices)
-
-        # Calculate the loss
-        self.losses = tf.squared_difference(self.y_pl, self.action_predictions)
-        self.loss = tf.reduce_mean(self.losses)
-
-        # Optimizer Parameters from original paper
-        self.optimizer = tf.train.RMSPropOptimizer(0.00025, 0.99, 0.0, 1e-6)
-        self.train_op = self.optimizer.minimize(self.loss, global_step=tf.contrib.framework.get_global_step())
+        self.predictions = tf.zeros(shape=[batch_size, len(VALID_ACTIONS)])
+        self.loss = tf.constant(0.0)
+        self.train_op = tf.no_op("train_pp")
 
         # Summaries for Tensorboard
         self.summaries = tf.summary.merge([
-            tf.summary.scalar("loss", self.loss),
-            tf.summary.histogram("loss_hist", self.losses),
-            tf.summary.histogram("q_values_hist", self.predictions),
-            tf.summary.scalar("max_q_value", tf.reduce_max(self.predictions))
+            tf.summary.scalar("loss", self.loss)
         ])
 
     def predict(self, sess, s):
@@ -144,12 +116,37 @@ class Estimator():
         """
         feed_dict = {self.X_pl: s, self.y_pl: y, self.actions_pl: a}
         summaries, global_step, _, loss = sess.run(
-            [self.summaries, tf.contrib.framework.get_global_step(), self.train_op, self.loss],
+            [self.summaries, tf.train.get_global_step(), self.train_op, self.loss],
             feed_dict)
         if self.summary_writer:
             self.summary_writer.add_summary(summaries, global_step)
         return loss
 
+# For Testing....
+
+tf.reset_default_graph()
+global_step = tf.Variable(0, name="global_step", trainable=False)
+
+e = Estimator(scope="test")
+sp = StateProcessor()
+
+with tf.Session() as sess:
+    sess.run(tf.initialize_all_variables())
+
+    # Example observation batch
+    observation = env.reset()
+
+    observation_p = sp.process(sess, observation)
+    observation = np.stack([observation_p] * 4, axis=2)
+    observations = np.array([observation] * 2)
+
+    # Test Prediction
+    print(e.predict(sess, observations))
+
+    # Test training step
+    y = np.array([10.0, 10.0])
+    a = np.array([1, 3])
+    print(e.update(sess, observations, a, y))
 
 def copy_model_parameters(sess, estimator1, estimator2):
     """
@@ -202,7 +199,7 @@ def deep_q_learning(sess,
                     state_processor,
                     num_episodes,
                     experiment_dir,
-                    replay_memory_size=500000,
+                    replay_memory_size=100000,
                     replay_memory_init_size=50000,
                     update_target_estimator_every=10000,
                     discount_factor=0.99,
@@ -210,7 +207,7 @@ def deep_q_learning(sess,
                     epsilon_end=0.1,
                     epsilon_decay_steps=500000,
                     batch_size=32,
-                    record_video_every=50):
+                    record_video_every=5000000):
     """
     Q-Learning algorithm for off-policy TD control using Function Approximation.
     Finds the optimal greedy policy while following an epsilon-greedy policy.
@@ -224,7 +221,7 @@ def deep_q_learning(sess,
         num_episodes: Number of episodes to run for
         experiment_dir: Directory to save Tensorflow summaries in
         replay_memory_size: Size of the replay memory
-        replay_memory_init_size: Number of random experiences to sample when initializing
+        replay_memory_init_size: Number of random experiences to sampel when initializing
           the reply memory.
         update_target_estimator_every: Copy parameters from the Q estimator to the
           target estimator every N steps
@@ -261,14 +258,14 @@ def deep_q_learning(sess,
         os.makedirs(monitor_path)
 
     saver = tf.train.Saver()
-    # # Load a previous checkpoint if we find one
-    # latest_checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
-    # if latest_checkpoint:
-    #     print("Loading model checkpoint {}...\n".format(latest_checkpoint))
-    #     saver.restore(sess, latest_checkpoint)
+    # Load a previous checkpoint if we find one
+    latest_checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
+    if latest_checkpoint:
+        print("Loading model checkpoint {}...\n".format(latest_checkpoint))
+        saver.restore(sess, latest_checkpoint)
 
     # Get the current time step
-    total_t = sess.run(tf.contrib.framework.get_global_step())
+    total_t = sess.run(tf.train.get_global_step())
 
     # The epsilon decay schedule
     epsilons = np.linspace(epsilon_start, epsilon_end, epsilon_decay_steps)
@@ -278,31 +275,29 @@ def deep_q_learning(sess,
         q_estimator,
         len(VALID_ACTIONS))
 
-    # TODO: Populate the replay memory with initial experience
+    # Populate the replay memory with initial experience
     print("Populating replay memory...")
     state = env.reset()
     state = state_processor.process(sess, state)
     state = np.stack([state] * 4, axis=2)
     for i in range(replay_memory_init_size):
-        action_probabilities = policy(sess, state, epsilons[min(total_t, epsilon_decay_steps - 1)])
-        action = np.random.choice(np.arange(len(action_probabilities)), p=action_probabilities)
+        action_probs = policy(sess, state, epsilons[total_t])
+        action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
         next_state, reward, done, _ = env.step(VALID_ACTIONS[action])
         next_state = state_processor.process(sess, next_state)
-        next_state = np.append(state[:, :, 1:], np.expand_dims(next_state, axis=2), axis=2)
+        next_state = np.append(state[:, :, 1:], np.expand_dims(next_state, 2), axis=2)
         replay_memory.append(Transition(state, action, reward, next_state, done))
         if done:
             state = env.reset()
             state = state_processor.process(sess, state)
-            # A processed [84, 84] state representing gray-scale values.
             state = np.stack([state] * 4, axis=2)
         else:
             state = next_state
 
-    # Record videos
-    env = Monitor(env,
-                  directory=monitor_path,
-                  resume=True,
-                  video_callable=lambda count: count % record_video_every == 0)
+    # # Record videos
+    # env.monitor.start(monitor_path,
+    #                   resume=True,
+    #                   video_callable=lambda count: count % record_video_every == 0)
 
     for i_episode in range(num_episodes):
 
@@ -312,7 +307,7 @@ def deep_q_learning(sess,
         # Reset the environment
         state = env.reset()
         state = state_processor.process(sess, state)
-        state = np.stack([state] * 4, axis=2)  # [state] * 4 --> 4 times the list [[1,2,3,4]] * 4 ---> [[1,2,3,4], [1,2,3,4], [1,2,3,4], [1,2,3,4]]
+        state = np.stack([state] * 4, axis=2)
         loss = None
 
         # One step in the environment
@@ -326,45 +321,50 @@ def deep_q_learning(sess,
             episode_summary.value.add(simple_value=epsilon, tag="epsilon")
             q_estimator.summary_writer.add_summary(episode_summary, total_t)
 
-            # TODO: Maybe update the target estimator
+            # Maybe update the target estimator
             if total_t % update_target_estimator_every == 0:
                 copy_model_parameters(sess, q_estimator, target_estimator)
+                print("\nCopied model parameters to target network.")
 
             # # Print out which step we're on, useful for debugging.
             # print("\rStep {} ({}) @ Episode {}/{}, loss: {}".format(
             #     t, total_t, i_episode + 1, num_episodes, loss), end="")
             # sys.stdout.flush()
 
-            # TODO: Take a step in the environment
-            action_probabilities = policy(sess, state, epsilons[min(total_t, epsilon_decay_steps - 1)])
-            action = np.random.choice(np.arange(len(action_probabilities)), p=action_probabilities)
+            # Take a step
+            action_probs = policy(sess, state, epsilon)
+            action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
             next_state, reward, done, _ = env.step(VALID_ACTIONS[action])
             next_state = state_processor.process(sess, next_state)
             next_state = np.append(state[:, :, 1:], np.expand_dims(next_state, 2), axis=2)
-
 
             # If our replay memory is full, pop the first element
             if len(replay_memory) == replay_memory_size:
                 replay_memory.pop(0)
 
-            # TODO: Save transition to replay memory
+            # Save transition to replay memory
             replay_memory.append(Transition(state, action, reward, next_state, done))
 
             # Update statistics
             stats.episode_rewards[i_episode] += reward
             stats.episode_lengths[i_episode] = t
 
-            # TODO: Sample a minibatch from the replay memory
-            minibatch = random.sample(replay_memory, batch_size)
-            state_batch, action_batch, reward_batch, next_state_batch, done_batch = map(np.array, zip(*minibatch))
+            # Sample a minibatch from the replay memory
+            samples = random.sample(replay_memory, batch_size)
+            states_batch, action_batch, reward_batch, next_states_batch, done_batch = map(np.array, zip(*samples))
 
-            # TODO: Calculate q values and targets
-            q_value_next = target_estimator.predict(sess, next_state_batch)
-            targets_batch = reward_batch + np.invert(done_batch).astype(np.float32) * discount_factor * np.amax(q_value_next, axis=1)
+            # Calculate q values and targets
+            # This is where Double Q-Learning comes in!
+            q_values_next = q_estimator.predict(sess, next_states_batch)
+            best_actions = np.argmax(q_values_next, axis=1)
+            q_values_next_target = target_estimator.predict(sess, next_states_batch)
+            targets_batch = reward_batch + np.invert(done_batch).astype(np.float32) * \
+                            discount_factor * q_values_next_target[np.arange(batch_size), best_actions]
 
-            # TODO Perform gradient descent update
-            state_batch = np.array(state_batch)
-            loss = q_estimator.update(sess, state_batch, action_batch, targets_batch)
+            # Perform gradient descent update
+            states_batch = np.array(states_batch)
+            loss = q_estimator.update(sess, states_batch, action_batch, targets_batch)
+
             if done:
                 break
 
@@ -384,21 +384,55 @@ def deep_q_learning(sess,
             episode_lengths=stats.episode_lengths[:i_episode + 1],
             episode_rewards=stats.episode_rewards[:i_episode + 1])
 
+    # env.monitor.close()
     env.close()
+
     return stats
 
-# ------------------------------------------------------------------------
+# -------------------- UTILITY --------------------------
+from matplotlib import pyplot as plt
+
+def plot_reward(total_reward_all_eps):
+    plt.figure()
+    plt.plot(total_reward_all_eps, label="DQN for ATARI - Breakage")
+    plt.xlabel('Episode')
+    plt.ylabel('Rewards')
+    plt.legend(loc='best')
+    plt.show()
+
+    window_width = 100
+    cumsum_vec = np.cumsum(np.insert(total_reward_all_eps, 0, 0))
+    ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
+
+    plt.figure()
+    plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+    plt.xlabel('Episode')
+    plt.ylabel('Moving-Average Rewards - window = 100')
+    plt.legend(loc='best')
+    plt.show()
+
+    window_width = 1000
+    cumsum_vec = np.cumsum(np.insert(total_reward_all_eps, 0, 0))
+    ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
+
+    plt.figure()
+    plt.plot(ma_vec, label="DQN for ATARI - Breakage")
+    plt.xlabel('Episode')
+    plt.ylabel('Moving-Average Rewards - window = 1000')
+    plt.legend(loc='best')
+    plt.show()
+
 
 tf.reset_default_graph()
 
 # Where we save our checkpoints and graphs
 experiment_dir = os.path.abspath("./experiments/{}".format(env.spec.id))
 
-# Create a global step variable
+# Create a glboal step variable
 global_step = tf.Variable(0, name='global_step', trainable=False)
 
 # Create estimators
-q_estimator = Estimator(scope="q_estimator", summaries_dir=experiment_dir)
+q_estimator = Estimator(scope="q", summaries_dir=experiment_dir)
 target_estimator = Estimator(scope="target_q")
 
 # State processor
@@ -406,24 +440,30 @@ state_processor = StateProcessor()
 
 # Run it!
 with tf.Session() as sess:
-    sess.run(tf.global_variables_initializer())
-    iter1 = 0
+    sess.run(tf.initialize_all_variables())
     for t, stats in deep_q_learning(sess,
                                     env,
                                     q_estimator=q_estimator,
                                     target_estimator=target_estimator,
                                     state_processor=state_processor,
                                     experiment_dir=experiment_dir,
-                                    num_episodes=10001,
-                                    replay_memory_size=50000,
-                                    replay_memory_init_size=5000,
-                                    update_target_estimator_every=500,
+                                    num_episodes = 10000,
+                                    replay_memory_size=100000,
+                                    replay_memory_init_size=50000,
+                                    update_target_estimator_every=10000,
                                     epsilon_start=1.0,
-                                    epsilon_end=0.01,
-                                    epsilon_decay_steps=10000,
+                                    epsilon_end=0.1,
+                                    epsilon_decay_steps=500000,
                                     discount_factor=0.99,
-                                    batch_size=32,
-                                    record_video_every=5000000):
-        iter1 += 1
-        if iter1 % 10 == 0:
-            print("\nEpisode #{}, Episode Reward: {}".format(iter1, stats.episode_rewards[-1]))
+                                    batch_size=32):
+        # if t > 1000000 == 0:
+        #     plot_reward(stats.episode_rewards)
+        #
+        # if t > 1500000 == 0:
+        #     plot_reward(stats.episode_rewards)
+
+        print("\nFrame #{}, Episode Reward: {}".format(t, stats.episode_rewards[-1]))
+
+
+plot_reward(stats.episode_rewards)
+
