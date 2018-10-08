@@ -12,7 +12,7 @@ env = gym.envs.make(ENV_NAME)
 # ---------- HYPER PARAMETERS -------------
 BATCH_SIZE = 128
 BATCH_ACTION = 1
-UPDATE_AFTER_NUMBER_OF_INPUT = 100
+UPDATE_AFTER_NUMBER_OF_INPUT = 1000
 
 N_ACTION = env.action_space.n
 N_DIMENSION = env.observation_space.shape[0]
@@ -25,20 +25,20 @@ STACKED_FRAME_NUMBER = 1
 N_EPS = 12000
 
 REPLAY_BUFFER_SIZE = 500000
-REPLAY_BUFFER_INIT_SIZE = 400000
+REPLAY_BUFFER_INIT_SIZE = 100000
 
 DISCOUNT_FACTOR = 0.99
 EPSILON_START = 1
 EPSILON_END = 0.1
-EPSILON_DECAY_STEPS = 100000
-EPSILON_END_STEP = 100000
+EPSILON_DECAY_STEPS = 200000
+EPSILON_END_STEP = 200000
 
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.0001
 
-TO = 0.01
+TO = 1.0
 
 
-DISPLAY_AFTER_EPS = [500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 10000]
+DISPLAY_AFTER_EPS = [800, 1000, 1200, 1500, 2000, 3000, 4000, 5000, 6000, 8000]
 
 # --------------------DEEP Q-NETWORK----------------------
 class Q_Network():
@@ -64,7 +64,7 @@ class Q_Network():
             flattened = tf.contrib.layers.flatten(self.X)
             fc1 = tf.contrib.layers.fully_connected(flattened, 128)
             fc2 = tf.contrib.layers.fully_connected(fc1, 256)
-            self.predictions = tf.contrib.layers.fully_connected(fc2, N_ACTION)
+            self.predictions = tf.contrib.layers.fully_connected(fc2, N_ACTION, activation_fn=None)
 
             # Q value for action-state pairs
             # [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, **2**, 3]
@@ -123,8 +123,8 @@ class DQN_Agent:
         self.q_estimator = Q_Network(scope="estimator")
         self.target_estimator = Q_Network(scope="target")
 
-        self.to_coef = tf.constant(TO, dtype=tf.float64)
-        self.to_comp = tf.constant(1 - TO, dtype=tf.float64)
+        # self.to_coef = tf.constant(TO, dtype=tf.float64)
+        # self.to_comp = tf.constant(1 - TO, dtype=tf.float64)
 
     def update(self, sess, s, a, r, s_, done, t, mode="DQN_LEARNER"):
         # print('UPDATING REPLAY BUFFER!')
@@ -149,8 +149,9 @@ class DQN_Agent:
                 # print("Q NEXT SHAPE = ", q_values_next_target.shape)
                 # print(done_batch * (t_batch < N_END_EPISODE))
                 # print("---------")
-                target_batch = reward_batch + np.invert(done_batch * (t_batch < N_END_EPISODE)).astype(np.float32) * self.discount_factor * q_values_next_target[np.arange(BATCH_SIZE), best_actions]
 
+                target_batch = reward_batch + np.invert(done_batch * (t_batch < N_END_EPISODE)).astype(np.float32) * self.discount_factor * q_values_next_target[np.arange(BATCH_SIZE), best_actions]
+                # target_batch = reward_batch + np.invert(done_batch).astype(np.float32) * self.discount_factor * q_values_next_target[np.arange(BATCH_SIZE), best_actions]
 
                 state_batch = np.array(state_batch)
                 loss = self.q_estimator.update(sess, state_batch, action_batch, target_batch)
@@ -186,11 +187,11 @@ class DQN_Agent:
 
         update_ops = []
         for e1_v, e2_v in zip(e1_params, e2_params):
-            p1 = tf.multiply(e1_v, self.to_coef)
-            p2 = tf.multiply(e2_v, self.to_comp)
-            p3 = tf.add(p1, p2)
-            # op = e2_v.assign(e1_v)
-            op = e2_v.assign(p3)
+            # p1 = tf.multiply(e1_v, self.to_coef)
+            # p2 = tf.multiply(e2_v, self.to_comp)
+            # p3 = tf.add(p1, p2)
+            # op = e2_v.assign(p3)
+            op = e2_v.assign(e1_v)
             update_ops.append(op)
 
         sess.run(update_ops)
@@ -202,7 +203,7 @@ def plot_reward(total_reward_all_eps):
         ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
 
         plt.figure()
-        plt.plot(ma_vec, label="DQN for ATARI Games - Breakout")
+        plt.plot(ma_vec, label="DQN for " + ENV_NAME)
         plt.xlabel('Episode')
         plt.ylabel('Moving-Average Rewards - window = ' + str(window_width))
         plt.legend(loc='best')

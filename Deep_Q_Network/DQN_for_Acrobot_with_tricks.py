@@ -18,7 +18,7 @@ env = gym.envs.make(ENV_NAME)
 # ---------- HYPER PARAMETERS -------------
 BATCH_SIZE = 128
 BATCH_ACTION = 1
-UPDATE_AFTER_NUMBER_OF_INPUT = 1000
+UPDATE_AFTER_NUMBER_OF_INPUT = 100
 
 N_ACTION = env.action_space.n
 
@@ -27,54 +27,42 @@ STACKED_FRAME_NUMBER = 1
 
 N_EPS = 12000
 
-REPLAY_BUFFER_SIZE = 1500000
-REPLAY_BUFFER_INIT_SIZE = 1000000
+REPLAY_BUFFER_SIZE = 500000
+REPLAY_BUFFER_INIT_SIZE = 1000
 
 DISCOUNT_FACTOR = 0.99
 EPSILON_START = 1
 EPSILON_END = 0.1
-EPSILON_DECAY_STEPS = 5000000
-EPSILON_END_STEP = 5000000
+EPSILON_DECAY_STEPS = 500000
+EPSILON_END_STEP = 500000
 
 LEARNING_RATE = 0.001
 
-TO = 0.1
+TO = 0.01
 
 
-DISPLAY_AFTER_EPS = [3000, 3500, 4000, 5000, 6000, 8000, 10000]
+DISPLAY_AFTER_EPS = [1000, 1300, 1800, 2000, 3000, 4000, 5000, 6000, 8000, 10000]
 
 # --------------------DEEP Q-NETWORK----------------------
 class Q_Network():
     def __init__(self, scope):
-        # Q network
-        # tf.reset_default_graph()
         self.scope = scope
-        # Build Model
         self._model_build()
 
     def _model_build(self):
         with tf.variable_scope(self.scope):
-            # Inputs are 4 image frames with shape 84x84
             self.X = tf.placeholder(shape=[None, 6, STACKED_FRAME_NUMBER], dtype=tf.float32, name="X")
             self.y = tf.placeholder(shape=[None], dtype=tf.float32, name="y")
-            # self.isTraining = tf.placeholder(dtype=tf.bool, name="isTraining")
             self.actions = tf.placeholder(shape=[None], dtype=tf.int32, name="actions")
 
             X = tf.to_float(self.X)
-            batch_size = tf.shape(self.X)[0]
+            batch_size = BATCH_SIZE
 
             # Fully connected layers
             flattened = tf.contrib.layers.flatten(X)
-            fc1 = tf.contrib.layers.fully_connected(flattened, 256)
-            fc2 = tf.contrib.layers.fully_connected(fc1, 512)
-            self.predictions = tf.contrib.layers.fully_connected(fc2, N_ACTION)
-
-            # Q value for action-state pairs
-            # [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, **2**, 3]
-            # 4 batches --> tf.range = [0,1,2,3]
-            # After reshape to 1 dimension array --> if want to find Q_value for a action 1
-            # --> index of selection action is 4 * (n_batch of action - 1) + actions
-            # Example: action 2 @ batch 3 ---> index = (3-1)*4 + 2 = 10 (remember index counted from 0)
+            fc1 = tf.contrib.layers.fully_connected(flattened, 128)
+            fc2 = tf.contrib.layers.fully_connected(fc1, 64)
+            self.predictions = tf.contrib.layers.fully_connected(fc2, N_ACTION, activation_fn=None)
 
             # Get the predictions for the chosen actions only
             gather_indices = tf.range(batch_size) * tf.shape(self.predictions)[1] + self.actions
@@ -84,18 +72,8 @@ class Q_Network():
             self.losses = tf.squared_difference(self.y, self.action_predictions)
             self.loss = tf.reduce_mean(self.losses)
 
-            # self.optimizer = tf.train.AdamOptimizer(LEARNING_RATE)
-            # gradients, variables = zip(*self.optimizer.compute_gradients(self.loss))
-            # gradients = [None if gradient is None else tf.clip_by_norm(gradient, GRADIENT_CLIPPING_NORM) for gradient in gradients]
-            # self.train_op = self.optimizer.apply_gradients(zip(gradients, variables))
-
-            # gradients, variables = zip(*self.optimizer.compute_gradients(self.loss))
-            # gradients, _ = tf.clip_by_value(gradients, -5, 5)
-            # self.train_op = self.optimizer.apply_gradients(zip(gradients, variables))
-
             # Optimizer
-            self.optimizer = tf.train.RMSPropOptimizer(LEARNING_RATE, 0.99, 0.0, 1e-6)
-            # self.optimizer = tf.train.AdamOptimizer(LEARNING_RATE)
+            self.optimizer = tf.train.AdamOptimizer(LEARNING_RATE)
             self.train_op = self.optimizer.minimize(self.loss, global_step=tf.contrib.framework.get_global_step())
 
     def predict(self, sess, s):
