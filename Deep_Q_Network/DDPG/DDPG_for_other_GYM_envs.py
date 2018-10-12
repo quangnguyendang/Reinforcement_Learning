@@ -13,7 +13,7 @@ ENV_NAME = "Pendulum-v0"
 env = gym.envs.make(ENV_NAME)
 
 BATCH_SIZE = 64
-UPDATE_AFTER_NUMBER_OF_INPUT = 100
+UPDATE_AFTER_NUMBER_OF_INPUT = 1
 
 STATE_DIM = env.observation_space.shape[0]
 ACTION_DIM = env.action_space.shape[0]
@@ -29,9 +29,9 @@ DISCOUNT_FACTOR = 0.99
 LEARNING_RATE_ACTOR = 0.0001
 LEARNING_RATE_CRITIC = 0.001
 
-TO = 0.01
+TO = 0.0001
 
-DISPLAY_AFTER_EPS = [150, 200, 250, 300, 400, 500, 600, 800, 1000]
+DISPLAY_AFTER_EPS = [400, 500, 600, 800, 1000, 1200]
 
 # ------------------------ Actor Network --------------------------------
 class Actor_Network():
