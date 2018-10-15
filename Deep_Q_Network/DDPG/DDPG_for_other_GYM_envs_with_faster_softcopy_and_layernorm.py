@@ -1,4 +1,5 @@
 # Follow tut on https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
+# And advice to use Layer_norm @  https://www.reddit.com/r/MachineLearning/comments/671455/d_batch_normalization_in_reinforcement_learning/
 
 import gym
 import numpy as np
@@ -30,7 +31,7 @@ LEARNING_RATE_CRITIC = 0.001
 
 TO = 0.001
 
-DISPLAY_AFTER_EPS = [200, 250, 300, 400, 500, 600, 800, 1000]
+DISPLAY_AFTER_EPS = [100, 150, 200, 250, 300, 400, 500, 600, 800, 1000]
 
 # ------------------------ Actor Network --------------------------------
 class Actor_Network():
@@ -48,16 +49,10 @@ class Actor_Network():
 
             flattened = tf.contrib.layers.flatten(self.X)
 
-            #   Layer with --- BATCHNORM
-
-            fc1 = tf.contrib.layers.fully_connected(flattened, 400, activation_fn=None)
-            fc1 = tf.contrib.layers.batch_norm(fc1, is_training=self.isTraining)
-            fc1 = tf.nn.relu(fc1)
-
-            #   Layer with --- BATCHNORM
-            fc2 = tf.contrib.layers.fully_connected(fc1, 300, activation_fn=None)
-            fc2 = tf.contrib.layers.batch_norm(fc2, is_training=self.isTraining)
-            fc2 = tf.nn.relu(fc2)
+            #   Layer with LAYER_NORM
+            fc1 = tf.contrib.layers.fully_connected(flattened, 400, normalizer_fn=tf.contrib.layers.layer_norm, activation_fn=tf.nn.relu)
+            #   Layer with LAYER_NORM
+            fc2 = tf.contrib.layers.fully_connected(fc1, 300, normalizer_fn=tf.contrib.layers.layer_norm, activation_fn=tf.nn.relu)
 
             out = tf.contrib.layers.fully_connected(fc2, ACTION_DIM, weights_initializer=tf.initializers.random_uniform(minval=-3e-3, maxval=3e-3), activation_fn=tf.nn.tanh)
 
@@ -104,9 +99,7 @@ class Critic_Network():
 
             # Layers with --- BATCHNORM
             flattened = tf.contrib.layers.flatten(self.X)
-            fc1 = tf.contrib.layers.fully_connected(flattened, 400, activation_fn=None)
-            fc1 = tf.contrib.layers.batch_norm(fc1, is_training=self.isTraining)
-            fc1 = tf.nn.relu(fc1)
+            fc1 = tf.contrib.layers.fully_connected(flattened, 400, normalizer_fn=tf.contrib.layers.layer_norm, activation_fn=tf.nn.relu)
 
             t1 = tf.contrib.layers.fully_connected(fc1, 300, activation_fn=None)
             t2 = tf.contrib.layers.fully_connected(self.actions, 300, activation_fn=None)
@@ -117,8 +110,8 @@ class Critic_Network():
 
             # Layers with --- BATCHNORM
             fc2 = tf.matmul(fc1, t1_W) + tf.matmul(self.actions, t2_W) + t2_b
-            # fc2 = tf.contrib.layers.batch_norm(fc2, is_training=self.isTraining)
-            fc2 = tf.nn.relu(fc2)
+            fc2 = tf.contrib.layers.layer_norm(fc2, activation_fn=tf.nn.relu)
+            # fc2 = tf.nn.relu(fc2)
 
             self.predictions = tf.contrib.layers.fully_connected(fc2, 1, weights_initializer=tf.initializers.random_uniform(minval=-3e-4, maxval=3e-4), activation_fn=None)
 
@@ -240,7 +233,7 @@ def plot_reward(total_reward_all_eps):
         ma_vec = (cumsum_vec[window_width:] - cumsum_vec[:-window_width]) / window_width
 
         plt.figure()
-        plt.plot(ma_vec, label="DQN for " + ENV_NAME)
+        plt.plot(ma_vec, label="DDPG for " + ENV_NAME)
         plt.xlabel('Episode')
         plt.ylabel('Moving-Average Rewards - window = ' + str(window_width))
         plt.legend(loc='best')
